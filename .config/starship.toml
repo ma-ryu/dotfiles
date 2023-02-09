@@ -7,4 +7,38 @@ disabled = false
 format = '([\[$conflicted$ahead_behind\]]($style) )'
 
 [package]
+symbol = " "
 disabled = true
+
+[aws]
+symbol = "  "
+
+[gcloud]
+symbol = ' '
+format = ' [$symbol$active]($style) '
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[directory]
+read_only = " "
+
+[elixir]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[java]
+symbol = " "
+
+[nodejs]
+symbol = " "
+format = ' [$symbol($version )]($style)'
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
