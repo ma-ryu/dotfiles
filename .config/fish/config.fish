@@ -9,6 +9,7 @@ set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 set -gx GOPATH $HOME/go
 set -gx PATH $PATH $GOPATH/bin
+set -gx DIRENV_LOG_FORMAT ""
 
 set fish_greeting
 
@@ -21,3 +22,4 @@ end
 
 starship init fish | source
 zoxide init fish | source
+eval (direnv hook fish)

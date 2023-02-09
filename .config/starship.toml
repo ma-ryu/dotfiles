@@ -1,5 +1,10 @@
 add_newline = true
 
+[custom.direnv]
+format = "[\\[direnv\\]]($style) "
+style = "fg:yellow"
+when = "env | grep -E '^DIRENV_DIR='"
+
 [time]
 disabled = false
 
@@ -35,7 +40,9 @@ symbol = " "
 
 [nodejs]
 symbol = " "
-format = ' [$symbol($version )]($style)'
+
+[php]
+symbol = " "
 
 [python]
 symbol = " "
