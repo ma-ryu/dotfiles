@@ -10,6 +10,7 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 set -gx GOPATH $HOME/go
 set -gx PATH $PATH $GOPATH/bin
 set -gx DIRENV_LOG_FORMAT ""
+set KERL_CONFIGURE_OPTIONS "--with-ssl=/opt/openssl/1.1.1t"
 
 set fish_greeting
 
@@ -22,4 +23,7 @@ end
 
 starship init fish | source
 zoxide init fish | source
+
+source ~/.asdf/asdf.fish
+
 eval (direnv hook fish)
