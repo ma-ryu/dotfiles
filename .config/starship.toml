@@ -7,6 +7,7 @@ when = "env | grep -E '^DIRENV_DIR='"
 
 [time]
 disabled = false
+format = "[$time]($style) "
 
 [git_status]
 format = '([\[$conflicted$ahead_behind\]]($style) )'
