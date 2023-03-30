@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-  "CreationDate": "2023-03-02T18:35:25.058-00:00",
+  "CreationDate": "2023-03-30T15:43:46.329-00:00",
   "Sources": [
     {
       "Packages": [
@@ -9,6 +9,9 @@
         },
         {
           "PackageIdentifier": "BlenderFoundation.Blender"
+        },
+        {
+          "PackageIdentifier": "DeepL.DeepL"
         },
         {
           "PackageIdentifier": "Discord.Discord"
@@ -27,6 +30,9 @@
         },
         {
           "PackageIdentifier": "Microsoft.OneDrive"
+        },
+        {
+          "PackageIdentifier": "Microsoft.PowerToys"
         },
         {
           "PackageIdentifier": "Microsoft.VisualStudioCode"

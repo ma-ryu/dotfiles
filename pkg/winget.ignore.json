@@ -1,0 +1,7 @@
+[
+  "Microsoft.DotNet.DesktopRuntime.",
+  "Microsoft.EdgeWebView2Runtime",
+  "Microsoft.VCRedist.",
+  "Unity.Unity.",
+  "NewTek.NDI5Runtime"
+]

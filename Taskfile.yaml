@@ -1,0 +1,57 @@
+version: '3'
+
+tasks:
+  link:home:
+    deps:
+      - link:config-home
+
+  link:home-file:
+    label: link:home-file {{.FILE}}
+    cmds:
+      - ln -s {{.PWD}}/home/{{.FILE}} ~/{{.FILE}}
+    status:
+      - test -L ~/{{.FILE}}
+    internal: true
+
+  link:config-home:
+    - task: link:home-file
+      vars: { FILE: .config }
+
+  sync:etc:
+    deps:
+      - sync:resolv.conf
+      - sync:wsl.conf
+
+  sync:resolv.conf:
+    - task: sync:etc-file
+      vars: { FILE: resolv.conf }
+
+  sync:wsl.conf:
+    - task: sync:etc-file
+      vars: { FILE: wsl.conf }
+
+  export:pkg:
+    deps:
+      - export:winget
+
+  export:winget:
+    - winget.exe export -o /tmp/winget.json
+    - >-
+      jq '
+        .[1] as $ignores
+        | .[0]
+        | .Sources[0].Packages
+          |= reduce $ignores[] as $ignore (
+            .;
+            map(select(
+              .PackageIdentifier
+              | startswith($ignore)
+              | not
+            ))
+          )
+        | .Sources[0].Packages
+          |= sort_by(.PackageIdentifier)
+      '
+      -s /tmp/winget.json pkg/winget.ignore.json
+      > pkg/winget.json
+    - rm /tmp/winget.json
