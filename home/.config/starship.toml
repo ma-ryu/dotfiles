@@ -3,7 +3,7 @@ add_newline = true
 [custom.direnv]
 format = "[\\[direnv\\]]($style) "
 style = "fg:yellow"
-when = "env | grep -E '^DIRENV_DIR='"
+when = 'test -n "$DIRENV_DIR"'
 
 [time]
 disabled = false

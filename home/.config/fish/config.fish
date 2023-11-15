@@ -21,8 +21,14 @@ set -gx PATH "$HOME/.cargo/bin:$PATH"
 set -gx GOPATH $HOME/go
 set -gx PATH $PATH $GOPATH/bin
 
+# kube
+set -gx KUBECONFIG $HOME/.kube/config
+
 # direnv
 set -gx DIRENV_LOG_FORMAT ""
+
+set -gx GOOGLE_APPLICATION_CREDENTIALS "$HOME/.config/gcloud/application_default_credentials.json"
+
 
 # openssl
 set KERL_CONFIGURE_OPTIONS "--with-ssl=/opt/openssl/1.1.1t"
