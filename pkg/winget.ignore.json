@@ -3,5 +3,9 @@
   "Microsoft.EdgeWebView2Runtime",
   "Microsoft.VCRedist.",
   "Unity.Unity.",
-  "NewTek.NDI5Runtime"
+  "NewTek.NDI5Runtime",
+  "Opera.Opera",
+  "PostgreSQL.pgAdmin",
+  "TopazLabs.TopazGigapixelAI",
+  "OpenVPNTechnologies.OpenVPNConnect"
 ]
