@@ -3,3 +3,5 @@
 	name = ma-ryu
 [core]
 	symlinks = true
+[init]
+	defaultBranch = main
